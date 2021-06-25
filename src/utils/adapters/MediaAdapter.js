@@ -1,18 +1,16 @@
 import AppConstants from "../AppConstants";
-import { Category, Media, Movie, Serie } from "../typings";
 
 class MediaAdapter {
 
-    JSONToMediaList(mediaList: Array<any>, type: Movie | Serie | null): Array<Media> {
+    JSONToMediaList(mediaList){
         let mediaListAdapted = mediaList.map((item) => {
             return (
                 {
                     id: item.id,
-                    type: type ? type : item.media_type,
-                    title: item.title || item.name,
+                    title: item.title,
                     description: item.overview,
                     popularity: item.popularity,
-                    date: item.release_date || item.first_air_date,
+                    date: item.release_date,
                     rate: item.vote_average,
                     image: item.poster_path ? (AppConstants.imageUrl + item.poster_path) : '',
                     categories: item.genre_ids,
@@ -24,8 +22,7 @@ class MediaAdapter {
     }
 
 
-
-    JSONToCategoryList(categoryList: Array<any>): Array<Category> {
+    JSONToCategoryList(categoryList){
         let categoryListAdapted = categoryList.map((item) => {
             return (
                 {

@@ -1,5 +1,4 @@
 import moviesTypes from '../types/mediaTypes';
-import { Action } from 'redux';
 
 const mediaActions = {
   initializeStart() {

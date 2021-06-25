@@ -1,6 +1,8 @@
-export default {
+const types =  {
     INITIALIZE_START: 'INITIALIZE_START',
     INITIALIZE_FINISH: 'INITIALIZE_FINISH',
     SELECT_MEDIA: 'SELECT_MEDIA',
     UPDATE_WISH_LIST: 'UPDATE_WISH_LIST',
 }
+
+export default types
