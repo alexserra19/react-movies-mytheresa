@@ -1,8 +1,7 @@
-import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import { all, call, put, takeLatest } from 'redux-saga/effects'
 import moviesTypes from '../types/mediaTypes'
 import MediaService from '../../services/MediaService';
 import mediaActions from '../actions/mediaActions';
-import _ from 'lodash';
 import config from '../../api/config';
 
 

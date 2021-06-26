@@ -1,6 +1,4 @@
-import _ from "lodash"
-
-export default {
+const helpers = {
     reduceText,
     handleNetworkError,
 }
@@ -12,3 +10,6 @@ function reduceText(text, length) {
 function handleNetworkError() {
     alert("Something went wrong. Please, try it again")
 }
+
+
+export default helpers;
