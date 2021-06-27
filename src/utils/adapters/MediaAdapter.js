@@ -16,7 +16,7 @@ class MediaAdapter {
                 description: media.overview,
                 popularity: media.popularity,
                 date: media.release_date,
-                rate: media.vote_average,
+                rate: Math.round(media.vote_average / 2),
                 image: media.poster_path ? (AppConstants.imageUrl + media.poster_path) : '',
                 categories: media.genre_ids,
                 numVotes: media.vote_count

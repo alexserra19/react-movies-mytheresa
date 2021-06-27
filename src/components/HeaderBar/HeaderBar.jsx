@@ -20,8 +20,8 @@ export const HeaderBar = () => {
                         <Menu.Item key="home">
                             <Link to="/home">{'Home'}</Link>
                         </Menu.Item>
-                        <Menu.Item key="whish">
-                            <Link to="/whishlist">{'Wish List'}</Link>
+                        <Menu.Item key="wish">
+                            <Link to="/wishlist">{'Wish List'}</Link>
                         </Menu.Item>
                     </Menu>
                 </Col>

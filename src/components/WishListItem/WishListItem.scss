@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.wish-list-item {
+    background-color: $white;
+    margin: 20px 0;
+
+    color: $black;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .item-info-container {
+        padding: 20px;
+    }
+
+    .top-row {
+
+        margin-bottom: 30px;
+        .rate {
+            text-align: right;
+        }
+    }
+
+
+    .description {
+        text-align: justify;
+    }
+}

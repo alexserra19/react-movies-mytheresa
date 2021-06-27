@@ -1,14 +1,12 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import mediaActions from '../store/actions/mediaActions'
-import AppConstants from '../utils/AppConstants';
-import { CarouselComponent } from '../components/Carousel/CarouselComponent'
-import { LoadingSpinner } from '../components/shared/LoadingSpinner/LoadingSpinner'
-
+import mediaActions from '../../store/actions/mediaActions'
+import AppConstants from '../../utils/AppConstants';
+import { CarouselComponent } from '../../components/Carousel/CarouselComponent'
+import { LoadingSpinner } from '../../components/shared/LoadingSpinner/LoadingSpinner'
 import { Row, Col, Layout } from 'antd';
 import _ from 'lodash'
-import './Home.scss'
 
 const { Content } = Layout;
 

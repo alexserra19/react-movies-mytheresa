@@ -1,10 +1,10 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import mediaActions from '../store/actions/mediaActions'
+import mediaActions from '../../store/actions/mediaActions'
 import { Row, Col, Layout, Button, Divider } from 'antd';
-import MediaService from '../services/MediaService';
-import { LoadingSpinner } from '../components/shared/LoadingSpinner/LoadingSpinner'
+import MediaService from '../../services/MediaService';
+import { LoadingSpinner } from '../../components/shared/LoadingSpinner/LoadingSpinner'
 import './Details.scss'
 
 const { Content } = Layout;
