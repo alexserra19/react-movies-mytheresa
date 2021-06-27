@@ -2,8 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import mediaActions from '../../store/actions/mediaActions'
-import { Row, Col, Layout, Button, Divider } from 'antd';
-import MediaService from '../../services/MediaService';
+import { Row, Col, Layout } from 'antd';
 import './WishList.scss'
 import _ from 'lodash'
 import { WishListItem } from '../../components/WishListItem/WishListItem';
@@ -11,14 +10,6 @@ import { WishListItem } from '../../components/WishListItem/WishListItem';
 const { Content } = Layout;
 
 class WishList extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
-
-    async componentDidMount() {
-    }
 
     renderWishItems = () => {
         return (

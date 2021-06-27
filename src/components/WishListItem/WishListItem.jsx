@@ -8,7 +8,7 @@ export const WishListItem = (props) => {
         <Link to={'details/' + props.item.id}>
             <Row className="wish-list-item">
                 <Col xs={24} md={4}>
-                    <img src={props.item.image} className="wish-item-image" alt="image"/>
+                    <img src={props.item.image} className="wish-item-image" alt={props.item.title}/>
                 </Col>
                 <Col xs={24} md={20} className="item-info-container">
                     <Row>
