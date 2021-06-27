@@ -2,36 +2,27 @@ import AppConstants from "../AppConstants";
 
 class MediaAdapter {
 
-    JSONToMediaList(mediaList){
-        let mediaListAdapted = mediaList.map((item) => {
-            return (
-                {
-                    id: item.id,
-                    title: item.title,
-                    description: item.overview,
-                    popularity: item.popularity,
-                    date: item.release_date,
-                    rate: item.vote_average,
-                    image: item.poster_path ? (AppConstants.imageUrl + item.poster_path) : '',
-                    categories: item.genre_ids,
-                    numVotes: item.vote_count
-                }
-            )
-        })
+    JSONToMediaList(mediaList) {
+        let mediaListAdapted = mediaList.map((item) => this.JSONToMedia(item))
         return mediaListAdapted
     }
 
 
-    JSONToCategoryList(categoryList){
-        let categoryListAdapted = categoryList.map((item) => {
-            return (
-                {
-                    id: item.id,
-                    genre: item.name
-                }
-            )
-        })
-        return categoryListAdapted
+    JSONToMedia(media) {
+        return (
+            {
+                id: media.id,
+                title: media.title,
+                description: media.overview,
+                popularity: media.popularity,
+                date: media.release_date,
+                rate: media.vote_average,
+                image: media.poster_path ? (AppConstants.imageUrl + media.poster_path) : '',
+                categories: media.genre_ids,
+                numVotes: media.vote_count
+            }
+        )
+
     }
 }
 

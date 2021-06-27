@@ -4,7 +4,7 @@ export const initialState = {
   popularMovies: [],
   topRatedMovies: [],
   upcomingMovies: [],
-  selectedMedia: null,
+  selectedMedia: {},
   isLoading: false,
   wishList: []
 };

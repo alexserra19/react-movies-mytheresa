@@ -21,7 +21,7 @@ class MediaService {
         let response = await RequestInterceptorService.doRequest(queryUrl);
         let data = []
         if (response?.isSuccess) {
-            data = MediaAdapter.JSONToMediaList(response.data.results)
+            data = MediaAdapter.JSONToMedia(response.data)
         }
         return data
     }

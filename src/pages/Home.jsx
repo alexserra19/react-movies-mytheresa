@@ -4,54 +4,60 @@ import { connect } from 'react-redux';
 import mediaActions from '../store/actions/mediaActions'
 import AppConstants from '../utils/AppConstants';
 import { CarouselComponent } from '../components/Carousel/CarouselComponent'
-import { Row, Col } from 'antd';
+import { Row, Col, Layout, Menu } from 'antd';
+import _ from 'lodash'
+import './Home.scss'
+
+const { Header, Content, Footer } = Layout;
+
 
 class Home extends React.Component {
 
     componentDidMount() {
-        this.props.actions.media.initializeStart()
+        if (_.isEmpty(this.props.media.popularMovies)) {
+            this.props.actions.media.initializeStart()
+        }
     }
 
     handleClick = (item) => {
         this.props.actions.media.selectMedia(item)
-        this.props.history.push('/details');
+        this.props.history.push('/details/' + item.id);
     }
 
     render() {
-
-        console.log('this.props', this.props.media)
-
         return (
-            <div className="layoutContainer">
-                <h1>The Movie Database API</h1>
-                <Row>
-                    <Col span={24}>
-                        <CarouselComponent
-                            title={AppConstants.carouselTitles.popular}
-                            elements={this.props.media.popularMovies}
-                            handleClick={this.handleClick}
-                        />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col span={24}>
-                        <CarouselComponent
-                            title={AppConstants.carouselTitles.topRated}
-                            elements={this.props.media.topRatedMovies}
-                            handleClick={this.handleClick}
-                        />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col span={24}>
-                        <CarouselComponent
-                            title={AppConstants.carouselTitles.upcoming}
-                            elements={this.props.media.upcomingMovies}
-                            handleClick={this.handleClick}
-                        />
-                    </Col>
-                </Row>
-            </div>
+            <Layout className="layout">
+                <Content className="layoutContainer">
+                    <h1>The Movie Database API</h1>
+                    <Row>
+                        <Col span={24}>
+                            <CarouselComponent
+                                title={AppConstants.carouselTitles.popular}
+                                elements={this.props.media.popularMovies}
+                                handleClick={this.handleClick}
+                            />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col span={24}>
+                            <CarouselComponent
+                                title={AppConstants.carouselTitles.topRated}
+                                elements={this.props.media.topRatedMovies}
+                                handleClick={this.handleClick}
+                            />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col span={24}>
+                            <CarouselComponent
+                                title={AppConstants.carouselTitles.upcoming}
+                                elements={this.props.media.upcomingMovies}
+                                handleClick={this.handleClick}
+                            />
+                        </Col>
+                    </Row>
+                </Content>
+            </Layout>
         );
     }
 }
