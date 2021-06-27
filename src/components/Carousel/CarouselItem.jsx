@@ -10,7 +10,7 @@ export const CarouselItem = (props) => {
                 <Col span={24}
                     style={{
                         backgroundImage: `url(${props.item.image})`,
-                        // backgroundSize: 'cover',
+                        backgroundSize: 'cover',
                         height: '300px',
                         position: 'relative'
                     }}
