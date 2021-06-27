@@ -1,7 +1,14 @@
 @import '../../styles/variables.scss';
 
-.web-title {
-    h3 {
-        color: $white;
+
+
+.header-container {
+    
+    padding: 0 8%;
+    
+    .web-title {
+        h3 {
+            color: $white;
+        }
     }
 }

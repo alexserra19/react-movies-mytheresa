@@ -8,17 +8,20 @@ const { Header } = Layout;
 
 export const HeaderBar = () => {
     return (
-        <Header>
+        <Header className="header-container">
             <Row>
-                <Col sm={24} md={4} className="web-title">
+                <Col xs={20} md={4} className="web-title">
                     <Link to="/home">
                         <h3>The Movie Database</h3>
                     </Link>
                 </Col>
-                <Col md={20}>
+                <Col xs={4} md={20}>
                     <Menu theme="dark" mode="horizontal">
-                        <Menu.Item>
+                        <Menu.Item key="home">
                             <Link to="/home">{'Home'}</Link>
+                        </Menu.Item>
+                        <Menu.Item key="whish">
+                            <Link to="/whishlist">{'Wish List'}</Link>
                         </Menu.Item>
                     </Menu>
                 </Col>
